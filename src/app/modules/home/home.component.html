@@ -1,0 +1,19 @@
+<div class="mb-6 md:mb-12 bg-lightMain"></div>
+<app-wrapper>
+  <div class="mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+    <app-banners
+      [banner]="banner"
+      *ngFor="let banner of bannersList; let i = index"
+    ></app-banners>
+  </div>
+  <div class="mx-auto mt-2">
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-${cols} gap-4 mx-auto"
+    >
+      <app-product-card
+        [product]="product"
+        *ngFor="let product of productsList"
+      ></app-product-card>
+    </div>
+  </div>
+</app-wrapper>
