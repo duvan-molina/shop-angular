@@ -6,7 +6,12 @@
       *ngFor="let banner of bannersList; let i = index"
     ></app-banners>
   </div>
-  <div class="mx-auto mt-2">
+  <div class="mx-auto">
+    <h2
+      class="mb-6 mt-6 text-main text-center sm:text-left md:mt-12 font-bold text-2xl"
+    >
+      Productos destacados
+    </h2>
     <div
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-${cols} gap-4 mx-auto"
     >
@@ -17,3 +22,21 @@
     </div>
   </div>
 </app-wrapper>
+<div class="mx-auto">
+  <app-wrapper>
+    <h2
+      class="mb-6 mt-6 text-main text-center sm:text-left md:mt-12 font-bold text-2xl"
+    >
+      Testimonios
+    </h2>
+    <div
+      class="rounded grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 bg-lightMain p-6 sm:p-8 md:p-14 gap-10"
+    >
+      <app-testiomal-card
+        [testimonial]="testimonial"
+        *ngFor="let testimonial of testimonialsList"
+      ></app-testiomal-card>
+    </div>
+  </app-wrapper>
+  <!-- <TestMonialsContainer /> -->
+</div>

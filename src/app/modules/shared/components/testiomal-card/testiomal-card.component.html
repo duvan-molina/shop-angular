@@ -1,0 +1,22 @@
+<div class="bg-white h-64 min rounded-lg p-4 flex flex-col justify-between">
+  <div>
+    <!-- <ReactStars
+              count={5}
+              edit={false}
+              size={16}
+              value={5}
+              activeColor="#ffd700"
+            /> -->
+    <p>
+      {{ testimonial.text }}
+    </p>
+  </div>
+  <div class="flex items-center">
+    <img
+      [src]="testimonial.avatar"
+      [alt]="testimonial.name"
+      class="rounded-full w-12 h-12 object-cover"
+    />
+    <h4 class="ml-2">{{ testimonial.name }} {{ testimonial.lastName }}</h4>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { WrapperComponent } from './modules/shared/components/wrapper/wrapper.co
 import { BannersComponent } from './modules/shared/components/banners/banners.component';
 import { AllServices } from './services/all.service';
 import { ProductCardComponent } from './modules/shared/components/product-card/product-card.component';
+import { TestiomalCardComponent } from './modules/shared/components/testiomal-card/testiomal-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProductCardComponent } from './modules/shared/components/product-card/p
     WrapperComponent,
     BannersComponent,
     ProductCardComponent,
+    TestiomalCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, APP_ROUTING],
   providers: [AllServices],

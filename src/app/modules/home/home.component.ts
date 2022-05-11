@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AllServices, Banner, Product } from 'src/app/services/all.service';
+import {
+  AllServices,
+  Banner,
+  Product,
+  Testimonial,
+} from 'src/app/services/all.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,12 +13,14 @@ import { AllServices, Banner, Product } from 'src/app/services/all.service';
 export class HomeComponent implements OnInit {
   bannersList: Banner[] = [];
   productsList: Product[] = [];
+  testimonialsList: Testimonial[] = [];
+
   constructor(private banners: AllServices) {}
 
   ngOnInit(): void {
     this.productsList = this.banners.getProducts(4);
     this.bannersList = this.banners.getBanners();
-
-    console.log(this.productsList);
+    this.testimonialsList = this.banners.getTestimonials();
+    console.log(this.testimonialsList);
   }
 }

@@ -11,6 +11,16 @@ export class AllServices {
       price: Number(faker.commerce.price()),
     }));
 
+  private testimonials = (quantity: number = 3): Testimonial[] =>
+    new Array(quantity).fill(0).map((_, i) => ({
+      id: `${new Date().getTime() + i}`,
+      name: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      text: faker.lorem.sentence(),
+      avatar: faker.image.avatar(),
+      rating: Number(faker.datatype.number({ min: 1, max: 5 })),
+    }));
+
   private banners: Banner[] = [
     {
       text: 'Entrega Rápida y Segura',
@@ -32,6 +42,10 @@ export class AllServices {
     return this.products(quantity);
   }
 
+  getTestimonials(quantity?: number) {
+    return this.testimonials(quantity);
+  }
+
   getBanners() {
     return this.banners;
   }
@@ -44,6 +58,14 @@ export interface Product {
   price: number;
 }
 
+export interface Testimonial {
+  id: string;
+  text: string;
+  avatar: string;
+  name: string;
+  lastName: string;
+  rating: number;
+}
 export interface Banner {
   text: string;
 }
