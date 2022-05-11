@@ -15,12 +15,11 @@ export class HomeComponent implements OnInit {
   productsList: Product[] = [];
   testimonialsList: Testimonial[] = [];
 
-  constructor(private banners: AllServices) {}
+  constructor(private allServices: AllServices) {}
 
   ngOnInit(): void {
-    this.productsList = this.banners.getProducts(4);
-    this.bannersList = this.banners.getBanners();
-    this.testimonialsList = this.banners.getTestimonials();
-    console.log(this.testimonialsList);
+    this.productsList = this.allServices.getProducts(4);
+    this.bannersList = this.allServices.getBanners();
+    this.testimonialsList = this.allServices.getTestimonials();
   }
 }

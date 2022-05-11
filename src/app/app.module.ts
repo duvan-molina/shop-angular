@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { APP_ROUTING } from './app.routes';
+// import { APP_ROUTING } from './app.routes';
 import { HomeComponent } from './modules/home/home.component';
 import { ProductComponent } from './modules/product/product.component';
 import { WrapperComponent } from './modules/shared/components/wrapper/wrapper.component';
@@ -13,6 +13,7 @@ import { ProductCardComponent } from './modules/shared/components/product-card/p
 import { TestiomalCardComponent } from './modules/shared/components/testiomal-card/testiomal-card.component';
 import { FooterComponent } from './modules/shared/components/footer/footer.component';
 import { HeaderComponent } from './modules/shared/components/header/header.component';
+import { ProductsComponent } from './modules/products/products.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { HeaderComponent } from './modules/shared/components/header/header.compo
     TestiomalCardComponent,
     FooterComponent,
     HeaderComponent,
+    ProductsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, APP_ROUTING],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [AllServices],
   bootstrap: [AppComponent],
 })
