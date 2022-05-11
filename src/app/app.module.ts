@@ -11,6 +11,8 @@ import { BannersComponent } from './modules/shared/components/banners/banners.co
 import { AllServices } from './services/all.service';
 import { ProductCardComponent } from './modules/shared/components/product-card/product-card.component';
 import { TestiomalCardComponent } from './modules/shared/components/testiomal-card/testiomal-card.component';
+import { FooterComponent } from './modules/shared/components/footer/footer.component';
+import { HeaderComponent } from './modules/shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { TestiomalCardComponent } from './modules/shared/components/testiomal-ca
     BannersComponent,
     ProductCardComponent,
     TestiomalCardComponent,
+    FooterComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, APP_ROUTING],
   providers: [AllServices],
