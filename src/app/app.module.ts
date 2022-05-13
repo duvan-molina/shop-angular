@@ -14,6 +14,7 @@ import { TestiomalCardComponent } from './modules/shared/components/testiomal-ca
 import { FooterComponent } from './modules/shared/components/footer/footer.component';
 import { HeaderComponent } from './modules/shared/components/header/header.component';
 import { ProductsComponent } from './modules/products/products.component';
+import { CartComponent } from './modules/shared/components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProductsComponent } from './modules/products/products.component';
     FooterComponent,
     HeaderComponent,
     ProductsComponent,
+    CartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [AllServices],
