@@ -17,6 +17,8 @@ import { HeaderComponent } from './modules/shared/components/header/header.compo
 import { ProductsComponent } from './modules/products/products.component';
 import { CartComponent } from './modules/shared/components/cart/cart.component';
 import { SliderComponent } from './modules/shared/components/slider/slider.component';
+import { ThumbsComponent } from './modules/shared/components/thumbs/thumbs.component';
+import { ReplacesPipe } from './pipes/replaces.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { SliderComponent } from './modules/shared/components/slider/slider.compo
     ProductsComponent,
     CartComponent,
     SliderComponent,
+    ThumbsComponent,
+    ReplacesPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, SwiperModule],
   providers: [AllServices],

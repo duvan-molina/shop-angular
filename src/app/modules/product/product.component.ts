@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AllServices, Product } from 'src/app/services/all.service';
+import { ActivatedRoute } from '@angular/router';
+import { AllServices, Product, ProductById } from 'src/app/services/all.service';
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,21 @@ import { AllServices, Product } from 'src/app/services/all.service';
 })
 export class ProductComponent implements OnInit {
   productsList: Product[] = [];
-  constructor(private products: AllServices) {
+  productById: any;
+  name: string = '';
+  constructor(
+    private products: AllServices,
+    private activatedRouted: ActivatedRoute
+  ) {
     this.productsList = this.products.getProducts(10);
+    this.productById = this.products.getProductById();
+
+    this.activatedRouted.params.subscribe((params) => {
+     this.name = params['slug']
+    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.productById);
+  }
 }

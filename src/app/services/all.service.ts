@@ -26,6 +26,23 @@ export class AllServices {
       rating: Number(faker.datatype.number({ min: 1, max: 5 })),
     }));
 
+  private product = (): ProductById => {
+    const title = faker.commerce.productName();
+    return {
+      id: `${new Date().getTime()}`,
+      title: title,
+      imagen: faker.image.image(),
+      price: Number(faker.commerce.price()),
+      description: faker.lorem.sentence(100),
+      // @ts-ignore
+      slug: title.toLowerCase().trim().replaceAll(' ', '-'),
+      images: new Array(10).fill(0).map((_, i) => ({
+        title: faker.commerce.productName(),
+        imagen: faker.image.image(),
+      }))
+    };
+  };
+
   private banners: Banner[] = [
     {
       text: 'Entrega Rápida y Segura',
@@ -50,11 +67,15 @@ export class AllServices {
     {
       imagen:
         'https://assets.jumpseller.com/store/alce-riders/themes/277895/options/21139127/Febrero-12-2022-Lagarto.png?1647553615',
-        title: 'Alce Riders 2',
+      title: 'Alce Riders 2',
     },
   ];
 
   constructor() {}
+
+  getProductById(){
+    return this.product();
+  }
 
   getProducts(quantity?: number) {
     return this.products(quantity);
@@ -97,4 +118,17 @@ export interface Banner {
 export interface ItemCarousel {
   imagen: string;
   title: string;
+}
+
+export interface ProductById {
+  id: string;
+  title: string;
+  imagen: string;
+  description: string;
+  price: number;
+  slug: string;
+  images: Array<{
+    imagen: string;
+    title: string;
+  }>;
 }

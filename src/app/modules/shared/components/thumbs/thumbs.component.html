@@ -1,0 +1,23 @@
+<swiper
+      style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
+      [spaceBetween]="10"
+      [navigation]="true"
+      [thumbs]="{ swiper: thumbsSwiper }"
+       class="mb-2 h-64 sm:h-80 md:h-96"
+    >
+    <ng-template *ngFor="let image of images" swiperSlide>
+      <img [src]="image.imagen" [alt]="image.title" class="w-full h-full object-cover">
+    </ng-template>
+    </swiper>
+    <swiper
+      (swiper)="thumbsSwiper = $event"
+      [spaceBetween]="10"
+      [slidesPerView]="4"
+      [freeMode]="true"
+      [watchSlidesProgress]="true"
+      class="mySwiper"
+    >
+      <ng-template *ngFor="let image of images" swiperSlide>
+      <img [src]="image.imagen" [alt]="image.title"  class="w-full h-full object-cover">
+    </ng-template>
+    </swiper>
