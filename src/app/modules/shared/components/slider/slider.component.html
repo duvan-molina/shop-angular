@@ -1,0 +1,21 @@
+<swiper
+  [slidesPerView]="1"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+  [navigation]="true"
+  [loop]="true"
+  [autoplay]="{
+      delay: 3000,
+      disableOnInteraction: false
+    }"
+>
+  <ng-template *ngFor="let item of items" swiperSlide>
+     <div class="w-full h-[15rem] md:h-[30rem]">
+        <img
+          class="w-full h-full object-cover"
+          [src]="item.imagen"
+          [alt]="item.title"
+        />
+      </div>
+  </ng-template>
+</swiper>

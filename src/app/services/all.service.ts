@@ -41,6 +41,19 @@ export class AllServices {
     },
   ];
 
+  private itemsCarousel: ItemCarousel[] = [
+    {
+      imagen:
+        'https://assets.jumpseller.com/store/alce-riders/themes/277895/options/21139120/Febrero-14-2022-Maverick-long.png?1647553614',
+      title: 'Alce Riders',
+    },
+    {
+      imagen:
+        'https://assets.jumpseller.com/store/alce-riders/themes/277895/options/21139127/Febrero-12-2022-Lagarto.png?1647553615',
+        title: 'Alce Riders 2',
+    },
+  ];
+
   constructor() {}
 
   getProducts(quantity?: number) {
@@ -53,6 +66,10 @@ export class AllServices {
 
   getBanners() {
     return this.banners;
+  }
+
+  getItemsCarousel() {
+    return this.itemsCarousel;
   }
 }
 
@@ -74,4 +91,10 @@ export interface Testimonial {
 }
 export interface Banner {
   text: string;
+}
+
+
+export interface ItemCarousel {
+  imagen: string;
+  title: string;
 }

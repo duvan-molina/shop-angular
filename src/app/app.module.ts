@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { FooterComponent } from './modules/shared/components/footer/footer.compo
 import { HeaderComponent } from './modules/shared/components/header/header.component';
 import { ProductsComponent } from './modules/products/products.component';
 import { CartComponent } from './modules/shared/components/cart/cart.component';
+import { SliderComponent } from './modules/shared/components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,9 @@ import { CartComponent } from './modules/shared/components/cart/cart.component';
     HeaderComponent,
     ProductsComponent,
     CartComponent,
+    SliderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SwiperModule],
   providers: [AllServices],
   bootstrap: [AppComponent],
 })
